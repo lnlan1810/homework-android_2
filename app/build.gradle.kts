@@ -1,6 +1,7 @@
 plugins {
     id(Dependencies.Plugins.application)
     id(Dependencies.Plugins.kotlinAndroid)
+    id("io.gitlab.arturbosch.detekt") version "1.22.0"
 }
 
 android {
@@ -83,4 +84,29 @@ dependencies {
     implementation(Dependencies.ThirdParty.koinAndroid)
     implementation(Dependencies.ThirdParty.koinAndroidxCompose)
 
+}
+
+tasks.register<Copy>("detektCollateReports") {
+    // Set up task
+    dependsOn(
+        "android-views:detekt",
+        "android-compose:detekt",
+        "core:detekt"
+    )
+    from(
+        rootDir.resolve("android-views/build/reports/detekt/"),
+        rootDir.resolve("android-compose/build/reports/detekt/"),
+        rootDir.resolve("core/build/reports/detekt/")
+    )
+    include("detekt.sarif")
+
+    // Delete any existing contents
+    buildDir.resolve("reports/detekt/").deleteRecursively()
+
+    // Set up copy
+    destinationDir = buildDir.resolve("reports/detekt/")
+    rename {
+        val totalCount = destinationDir.list()?.count()
+        "$totalCount-$it"
+    }
 }
