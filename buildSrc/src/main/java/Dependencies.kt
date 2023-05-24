@@ -3,6 +3,7 @@ object Dependencies {
     object Plugins {
         const val application = "com.android.application"
         const val kotlinAndroid = "org.jetbrains.kotlin.android"
+        const val id = "io.gitlab.arturbosch.detekt:1.18.1"
     }
 
     object ClassPath {
@@ -19,6 +20,7 @@ object Dependencies {
     object Android {
 
         object Version {
+            const val material3 = "3.3.0-rc01"
             const val coreKtx = "1.7.0"
             const val appCompat = "1.4.1"
             const val activityCompose = "1.4.0"
@@ -26,6 +28,9 @@ object Dependencies {
             const val lifecycle = "2.5.0-rc01"
             const val lifecycleExtensions = "2.2.0"
         }
+
+        const val composeUiMaterial3 = "androidx.compose.material3:material3-window-size-class:1.0.1"
+        const val material3 = "androidx.compose.material3:material3:1.0.1"
 
         const val coreKts = "androidx.core:core-ktx:${Version.coreKtx}"
         const val appCompat = "androidx.appcompat:appcompat:${Version.appCompat}"
@@ -51,11 +56,12 @@ object Dependencies {
     object ThirdParty {
 
         object Version {
-            const val androidMaterial = "1.6.0"
+            const val androidMaterial = "1.6.1"
             const val coilCompose = "1.3.2"
             const val coroutines = "1.6.0"
             const val retrofit = "2.9.0"
             const val koin = "3.1.5"
+
         }
 
         // Coroutines
