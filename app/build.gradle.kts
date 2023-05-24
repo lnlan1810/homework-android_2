@@ -29,13 +29,9 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = AppConfig.javaCompatibility
-        targetCompatibility = AppConfig.javaCompatibility
-    }
 
     kotlinOptions {
-        jvmTarget = AppConfig.javaJvmTarget
+        jvmTarget = "1.8"
     }
 
     buildFeatures {
@@ -43,7 +39,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Android.Version.compose
+        kotlinCompilerExtensionVersion = "1.1.1"
     }
 
     packagingOptions {
@@ -62,6 +58,8 @@ dependencies {
 
     implementation(Dependencies.Android.composeUi)
     implementation(Dependencies.Android.composeMaterial)
+    implementation(Dependencies.Android.composeUiMaterial3)
+    implementation(Dependencies.Android.material3)
     implementation(Dependencies.Android.composeMaterialIconsExtended)
     implementation(Dependencies.Android.composeUiTooling)
     implementation(Dependencies.Android.composeUiToolingPreview)
