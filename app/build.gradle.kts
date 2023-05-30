@@ -82,6 +82,14 @@ dependencies {
     implementation(Dependencies.ThirdParty.koinAndroid)
     implementation(Dependencies.ThirdParty.koinAndroidxCompose)
 
+    // Test
+    testImplementation(Dependencies.Test.junit)
+    testImplementation(Dependencies.Test.roboeletric)
+    testImplementation(Dependencies.Test.mockk)
+    testImplementation(Dependencies.Test.kotlinxCoroutinesTest)
+    testImplementation(Dependencies.Test.koinTest)
+    testImplementation(Dependencies.Test.okHttp3MockWebServer)
+
 }
 
 tasks.register<Copy>("detektCollateReports") {
