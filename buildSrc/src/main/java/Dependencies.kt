@@ -80,4 +80,21 @@ object Dependencies {
         const val koinAndroidxCompose = "io.insert-koin:koin-androidx-compose:${Version.koin}"
     }
 
+    object Test {
+
+        object Version {
+            const val junit = "4.13.2"
+            const val roboeletric = "4.6.1"
+            const val mockk = "1.12.4"
+            const val okHttp3MockWebServer = "4.9.2"
+        }
+
+        const val junit = "junit:junit:${Version.junit}"
+        const val roboeletric = "org.robolectric:robolectric:${Version.roboeletric}"
+        const val mockk = "io.mockk:mockk:${Version.mockk}"
+        const val kotlinxCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${ThirdParty.Version.coroutines}"
+        const val koinTest = "io.insert-koin:koin-test:${ThirdParty.Version.koin}"
+        const val okHttp3MockWebServer = "com.squareup.okhttp3:mockwebserver:${Version.okHttp3MockWebServer}"
+    }
+
 }
